@@ -3,6 +3,8 @@ To run the code, run:
 ``` python main.py ```
 in an IDE of choice. (Developed on PyCharm)
 
+Python version 3.9.13
+
 Requires pip install of basic python libraries if needed.
 
 In the /src folder, you can find the main files under maze_main that are used for the application.
