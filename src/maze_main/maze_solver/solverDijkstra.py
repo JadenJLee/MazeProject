@@ -12,6 +12,8 @@ returns
     path - array of edges that give the shortest path by distance
 
 '''
+
+
 class Vertex:
     def __init__(self, node):
         self.id = node
@@ -43,6 +45,7 @@ class Vertex:
 
     def set_visited(self):
         self.visited = True
+
 
 class Graph:
     def __init__(self):
@@ -76,6 +79,7 @@ class Graph:
     def set_previous(self, current):
         self.previous = current
 
+
 class DijkstraSolver:
     def __init__(self, entry, exit):
         self.graph = Graph()
@@ -100,12 +104,6 @@ class DijkstraSolver:
         for weight, x, y in weights:
             self.graph.add_edge(x, y, weight)
 
-        # printing out the graph for debugging
-        # for v in self.graph:
-        #     for w in v.get_connections():
-        #         vid = v.get_id()
-        #         wid = w.get_id()
-        #         print('( %s , %s, %3d)' % (vid, wid, v.get_weight(w)))
     def dijkstra(self):
         print('''Dijkstra's shortest path''')
         start = self.graph.get_vertex(self.entry)

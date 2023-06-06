@@ -26,21 +26,22 @@ class Generator:
         return nodes, edges
 
     def checkInBoundsGraph(self, currX, currY, edges, maxX, maxY):
-        if currX > 0:
-            edges.add(((currX, currY), (currX - 1, currY)))
         if currX < maxX - 1:
             edges.add(((currX, currY), (currX + 1, currY)))
-        if currY > 0:
-            edges.add(((currX, currY), (currX, currY - 1)))
+        if currX > 0:
+            edges.add(((currX, currY), (currX - 1, currY)))
         if currY < maxY - 1:
             edges.add(((currX, currY), (currX, currY + 1)))
+        if currY > 0:
+            edges.add(((currX, currY), (currX, currY - 1)))
 
     def generateRandomEdgeWeights(self):
-        #random.seed(10)  # just for debugging purposes
+        # random.seed(10)  # just for debugging purposes
         edgeWeights = [(random.randint(1, 100), x, y) for (x, y) in self.edges]
         return edgeWeights
 
-    ## helper functions for Kruskals taken from https://www.programiz.com/dsa/kruskal-algorithm
+    """ helper functions for Kruskals taken from https://www.programiz.com/dsa/kruskal-algorithm """
+
     def createMaze(self):
         edgeWeights = self.generateRandomEdgeWeights()
         rank = {n: 0 for n in self.nodes}
@@ -50,8 +51,8 @@ class Generator:
 
         for weight, x, y in sorted(edgeWeights):
             if x != y and self.find(parent, x) != self.find(parent, y):
-                result.add((x, y))
                 resultArray.append((weight, x, y))
+                result.add((x, y))
                 self.apply_union(parent, rank, x, y)
 
         return result, resultArray
