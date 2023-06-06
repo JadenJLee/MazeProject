@@ -20,8 +20,7 @@ Why Kruskals Algorithm for building a maze?
 - No cycles which makes my life and coding a lot easier.
 
 Why Dijkstra's Algorithm for solving a maze?
-- I did it in school
-- No but actually, it's a very nice algorithm for finding the shortest path between two nodes in a graph.
+- It's a very nice algorithm for finding the shortest path between two nodes in a graph.
 - It can return a variety of things. It can:
     - return distance between two nodes, distances between a node and all other nodes, distance and a path, distance and a previous node, etc.
-- very powerful algorithm in the case of a maze because it solves it perfectly and most efficiently. (which is cool too).
+- very powerful algorithm in the case of a maze because it solves it perfectly and most efficiently.
